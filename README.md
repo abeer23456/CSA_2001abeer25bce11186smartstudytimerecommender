@@ -1,2 +1,8 @@
 # 📚 Smart Study Time Recommender
-An AI-based system that recommends study hours using factors like difficulty, preparation, importance, and exam proximity, helping students plan efficiently and improve performance.
+
+
+🔍 Overview
+
+This project is an AI-based system that recommends how many hours a student should study for a subject based on difficulty, preparation level, importance, and exam proximity.
+
+
