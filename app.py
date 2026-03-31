@@ -31,9 +31,9 @@ def asknum(msg, low, high):
             if low <= val <= high:
                 return val
             else:
-                print("enter a number between", low, "and", high)
+                print("enter number between", low, "and", high)
         except:
-            print("invalid input try again")
+            print("wrong input try again")
 
 def fixhours(h, days, prep):
     if days <= 3:
@@ -52,17 +52,17 @@ def getpriority(h):
     elif h <= 8:
         return "High"
     else:
-        return "Very High"
+        return "Very high"
 
 def gettip(p):
-    if p == "Very High":
-        return "Start immediately and revise daily."
+    if p == "Very high":
+        return "start now revise daily"
     elif p == "High":
-        return "Give this subject strong focus."
+        return "focus more on this"
     elif p == "Moderate":
-        return "Maintain regular study sessions."
+        return "keep studying regularly"
     else:
-        return "Light revision should be enough."
+        return "light revision ok"
 
 def predictit(model, a, b, c, d):
     test = pd.DataFrame({
@@ -77,35 +77,35 @@ def predictit(model, a, b, c, d):
 
 def showall(stuff):
     table = pd.DataFrame(stuff)
-    table = table.sort_values(by="Recommended Study Time (hours)", ascending=False)
+    table = table.sort_values(by="Study time in hours", ascending=False)
 
-    print("\n" + "="*95)
-    print("FINAL STUDY PLAN")
-    print("="*95)
+    print("\n" + "="*80)
+    print("Final study plan")
+    print("="*80)
     print(table.to_string(index=False))
-    print("="*95)
+    print("="*80)
 
-    total = table["Recommended Study Time in hours"].sum()
-    print("\nTotal recommended study time for all subjects:", round(total,2), "hours")
+    total = table["Study time in hours"].sum()
+    print("\nTotal time needed:", round(total,2), "hours")
 
-print("="*60)
-print("SMART STUDY TIME RECOMMENDER")
-print("="*60)
+print("="*50)
+print("Smart study recommender")
+print("="*50)
 
 df = makedata()
 model = trainit(df)
 
-n = asknum("enter the number of subjects ", 1, 20)
+n = asknum("enter number of subjects ", 1, 20)
 
 for i in range(1, n+1):
-    print("\nentering details for subject", i)
-    print("-"*40)
+    print("\nsubject", i)
+    print("-"*30)
 
     sub = input("enter subject name ").strip()
-    a = asknum("enter subject difficulty from 1 to 5  ", 1, 5)
-    b = asknum("enter days left before exam (1-30) ", 1, 30)
-    c = asknum("enter preparation level from 1 to 5  ", 1, 5)
-    d = asknum("enter subject importance from 1 to 5 ", 1, 5)
+    a = asknum("difficulty 1-5 ", 1, 5)
+    b = asknum("days left 1-30 ", 1, 30)
+    c = asknum("prep level 1-5 ", 1, 5)
+    d = asknum("importance 1-5 ", 1, 5)
 
     hrs = predictit(model, a, b, c, d)
     p = getpriority(hrs)
@@ -114,10 +114,10 @@ for i in range(1, n+1):
     allresults.append({
         "Subject": sub,
         "Difficulty": a,
-        "Days Left": b,
+        "Days left": b,
         "Preparation": c,
         "Importance": d,
-        "Recommended Study Time (hours)": hrs,
+        "Study time in hours": hrs,
         "Priority": p,
         "Advice": tip
     })
