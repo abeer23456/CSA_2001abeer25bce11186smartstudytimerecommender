@@ -56,37 +56,54 @@ Output:
 
 ## 🚀 Installation & Setup
 
-Make sure Python 3 is installed 
+### Step 1: Install Python
+- Make sure Python 3.8+ is installed  
+- Check using:python --version
+
+
+### Step 2: Clone the Repository
 - git clone https://github.com/abeer23456/CSA_2001abeer25bce11186smartstudytimerecommender.git
 - cd CSA_2001abeer25bce11186smartstudytimerecommender
-- pip install -r requirements.txt
-
 ---
 
+### Step 3: Install Dependencies
+- pip install -r requirements.txt
+
+  
 ## ▶️ Run the Program
 python app.py
 
 
+
+---
+
+## 🧪 Usage
+
+1. Enter number of subjects  
+2. Enter details for each subject  
+3. View:
+   - Recommended study hours  
+   - Priority level  
+   - Advice  
+   - Final organized study plan  
+
 ---
 
 ## 📊 Result
-
-The system provides realistic study recommendations where:
-
-- Higher difficulty & importance → more study time
-- Better preparation → less study time
-- Fewer days left → higher urgency
+- Higher difficulty & importance → more study time  
+- Better preparation → less study time  
+- Fewer days left → higher urgency  
+- Subjects are automatically prioritized  
 
 ---
 
 ## 📈 Future Scope
+- Add daily timetable generation  
+- GUI / Web app (Streamlit)  
+- Use real student dataset  
+- Export study plan  
 
-- Use real student data  
-- Add GUI / Web app  
-- Multi-subject planning
 ---
 
 ## 👨‍💻 Author
-
 Abeer Gupta
-
