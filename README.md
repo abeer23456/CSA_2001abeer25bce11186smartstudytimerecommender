@@ -37,4 +37,49 @@ To help students plan their study time efficiently using basic AI and machine le
 
 ## 💻 Example
 
-Input:
+Input:4,3,2,5
+
+Output:10–12 hours
+
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- Pandas
+- Scikit-learn
+
+---
+
+## 🚀 Setup
+git clone <repo-link>
+cd study-time-recommender
+pip install -r requirements.txt
+python app.py
+
+
+---
+
+## 📊 Result
+
+The system provides realistic study recommendations where:
+
+- Higher difficulty & importance → more study time
+- Better preparation → less study time
+- Fewer days left → higher urgency
+
+---
+
+## 📈 Future Scope
+
+- Real student dataset
+- GUI / Web app
+- Daily study planner
+
+---
+
+## 👨‍💻 Author
+
+Abeer Gupta
+
