@@ -1,28 +1,28 @@
 # 📚 Smart Study Time Recommender
 
-## 🔍 Overview
+##  Overview
 The Smart Study Time Recommender is an AI-based system designed to help students efficiently plan their study time across multiple subjects. It analyzes key factors such as subject difficulty, preparation level, importance, and exam proximity to predict the optimal number of study hours required for each subject.
 
 The system uses a combination of a Decision Tree machine learning model and rule-based logic to generate realistic and personalized recommendations. It then organizes all subjects into a structured study plan, prioritizing them based on urgency and required effort.
 
-This project demonstrates how fundamental AI and learning concepts can be applied to solve a practical, real-world problem faced by students in everyday academic life.
+This project helps to demonstrate how fundamental AI and learning concepts can be applied to solve a practical, real-world problem faced by students in everyday academic life.
 ---
 
-## 🎯 Objective
+##  Objective
 The objective of this project is to help students efficiently allocate their study time across multiple subjects by using artificial intelligence techniques. It aims to provide personalized study recommendations based on factors such as difficulty, preparation level, importance, and exam proximity.
 
 Additionally, the project demonstrates the practical application of fundamental AI and machine learning concepts by building a system that can predict, prioritize, and organize study tasks in a structured and meaningful way.
 
 ---
 
-## 🧠 AI Concepts Used
+##  AI Concepts Used
 - **Supervised Learning:** A Decision Tree Regressor is used to predict study hours based on input features.  
 - **Feature-Based Prediction:** Inputs such as difficulty, preparation level, importance, and days left are used as features for prediction.  
 - **Rule-Based Decision Logic:** Additional rules are applied to refine predictions and make them more realistic.  
 - **Data-Driven Modeling:** The model learns patterns from sample data to generate recommendations for new inputs.  
 
 ---
-## ✨ Features
+##  Features
 - Supports multiple subjects in a single run  
 - Predicts study hours using a Decision Tree model  
 - Applies rule-based adjustments for realistic recommendations  
@@ -33,7 +33,7 @@ Additionally, the project demonstrates the practical application of fundamental 
 - Validates user input for accuracy and reliability
 
   
-## ⚙️ How It Works
+##  How It Works
 
 ### Inputs:
 1. Number of subjects  
@@ -57,7 +57,7 @@ Final Output:
 - Subjects sorted by highest study time required  
 - Total study hours required for all subjects  
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - Pandas
@@ -65,7 +65,7 @@ Final Output:
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Step 1: Install Python
 - Make sure Python 3.8+ is installed  
@@ -81,9 +81,9 @@ Final Output:
 - pip install -r requirements.txt
 
   
-## ▶️ Run the Program
+## Run the Program
 python app.py
 
 
-## 👨‍💻 Author
+##  Author
 Abeer Gupta
