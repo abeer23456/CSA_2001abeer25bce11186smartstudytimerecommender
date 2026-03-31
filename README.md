@@ -32,14 +32,16 @@ To help students plan their study time efficiently using basic AI and machine le
 ### Output:
 
 - Recommended study hours
-
+- Priority level and advice  
 ---
 
 ## 💻 Example
 
 Input:4,3,2,5
 
-Output:10–12 hours
+Output:
+- Recommended Study Time: ~10–12 hours
+- Priority Level: High
 
 
 ---
@@ -52,11 +54,17 @@ Output:10–12 hours
 
 ---
 
-## 🚀 Setup
-- git clone <repo-link>
-- cd study-time-recommender
+## 🚀 Installation & Setup
+
+Make sure Python 3 is installed 
+- git clone https://github.com/abeer23456/CSA_2001abeer25bce11186smartstudytimerecommender.git
+- cd CSA_2001abeer25bce11186smartstudytimerecommender
 - pip install -r requirements.txt
-- python app.py
+
+---
+
+## ▶️ Run the Program
+python app.py
 
 
 ---
@@ -73,10 +81,9 @@ The system provides realistic study recommendations where:
 
 ## 📈 Future Scope
 
-- Real student dataset
-- GUI / Web app
-- Daily study planner
-
+- Use real student data  
+- Add GUI / Web app  
+- Multi-subject planning
 ---
 
 ## 👨‍💻 Author
