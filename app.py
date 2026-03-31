@@ -85,8 +85,8 @@ def showall(stuff):
     print(table.to_string(index=False))
     print("="*95)
 
-    total = table["Recommended Study Time (hours)"].sum()
-    print("\nTotal Recommended Study Time for All Subjects:", round(total,2), "hours")
+    total = table["Recommended Study Time in hours"].sum()
+    print("\nTotal recommended study time for all subjects:", round(total,2), "hours")
 
 print("="*60)
 print("SMART STUDY TIME RECOMMENDER")
@@ -102,10 +102,10 @@ for i in range(1, n+1):
     print("-"*40)
 
     sub = input("enter subject name ").strip()
-    a = asknum("enter subject difficulty (1-5) ", 1, 5)
+    a = asknum("enter subject difficulty from 1 to 5  ", 1, 5)
     b = asknum("enter days left before exam (1-30) ", 1, 30)
-    c = asknum("enter preparation level (1-5) ", 1, 5)
-    d = asknum("enter subject importance (1-5) ", 1, 5)
+    c = asknum("enter preparation level from 1 to 5  ", 1, 5)
+    d = asknum("enter subject importance from 1 to 5 ", 1, 5)
 
     hrs = predictit(model, a, b, c, d)
     p = getpriority(hrs)
