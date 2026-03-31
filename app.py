@@ -62,8 +62,7 @@ def get_advice(priority):
         return "Give this subject strong focus."
     elif priority == "Moderate":
         return "Maintain regular study sessions."
-    else:
-        return "Light revision should be enough."
+    return "Light revision should be enough."
 
 
 def predict_study_time(model, difficulty, days_left, preparation, importance):
@@ -79,33 +78,58 @@ def predict_study_time(model, difficulty, days_left, preparation, importance):
     return final_hours
 
 
+def display_results(results):
+    results_df = pd.DataFrame(results)
+    results_df = results_df.sort_values(by="Recommended Study Time (hours)", ascending=False)
+
+    print("\n" + "=" * 95)
+    print("FINAL STUDY PLAN")
+    print("=" * 95)
+    print(results_df.to_string(index=False))
+    print("=" * 95)
+
+    total_hours = results_df["Recommended Study Time (hours)"].sum()
+    print(f"\nTotal Recommended Study Time for All Subjects: {round(total_hours, 2)} hours")
+
+
 def main():
-    print("=" * 50)
-    print("         SMART STUDY TIME RECOMMENDER")
-    print("=" * 50)
+    print("=" * 60)
+    print("                SMART STUDY TIME RECOMMENDER")
+    print("=" * 60)
 
     df = create_dataset()
     model = train_model(df)
 
-    subject_name = input("Enter subject name: ").strip()
+    num_subjects = get_valid_input("Enter the number of subjects: ", 1, 20)
 
-    difficulty = get_valid_input("Enter subject difficulty (1-5): ", 1, 5)
-    days_left = get_valid_input("Enter days left before exam (1-30): ", 1, 30)
-    preparation = get_valid_input("Enter preparation level (1-5): ", 1, 5)
-    importance = get_valid_input("Enter subject importance (1-5): ", 1, 5)
+    results = []
 
-    hours = predict_study_time(model, difficulty, days_left, preparation, importance)
-    priority = get_priority_level(hours)
-    advice = get_advice(priority)
+    for i in range(1, num_subjects + 1):
+        print(f"\nEntering details for Subject {i}")
+        print("-" * 40)
 
-    print("\n" + "=" * 50)
-    print("               RECOMMENDATION RESULT")
-    print("=" * 50)
-    print(f"Subject Name           : {subject_name}")
-    print(f"Recommended Study Time : {hours} hours")
-    print(f"Priority Level         : {priority}")
-    print(f"Advice                 : {advice}")
-    print("=" * 50)
+        subject_name = input("Enter subject name: ").strip()
+        difficulty = get_valid_input("Enter subject difficulty (1-5): ", 1, 5)
+        days_left = get_valid_input("Enter days left before exam (1-30): ", 1, 30)
+        preparation = get_valid_input("Enter preparation level (1-5): ", 1, 5)
+        importance = get_valid_input("Enter subject importance (1-5): ", 1, 5)
+
+        hours = predict_study_time(model, difficulty, days_left, preparation, importance)
+        priority = get_priority_level(hours)
+        advice = get_advice(priority)
+
+        results.append({
+            "Subject": subject_name,
+            "Difficulty": difficulty,
+            "Days Left": days_left,
+            "Preparation": preparation,
+            "Importance": importance,
+            "Recommended Study Time (hours)": hours,
+            "Priority": priority,
+            "Advice": advice
+        })
+
+    display_results(results)
 
 
 if __name__ == "__main__":
