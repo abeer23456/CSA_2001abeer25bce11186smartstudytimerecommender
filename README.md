@@ -53,10 +53,10 @@ Output:10–12 hours
 ---
 
 ## 🚀 Setup
-git clone <repo-link>
-cd study-time-recommender
-pip install -r requirements.txt
-python app.py
+-git clone <repo-link>
+-cd study-time-recommender
+-pip install -r requirements.txt
+-python app.py
 
 
 ---
